@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Pharmacy SRTH Dev.</title>
+  </head>
+  <body>
+    <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  <div class="alert alert-primary" role="alert">
+  <center>Loading...</center>
+</div>
+    
+    <script>
+  window.onload = function(e) {
+  liff.init({liffId:"2007659270-d7lK6J8z"}, function() {
+    liff.ready.then(() => {
+     if (liff.isLoggedIn()) {
+       var link = getParameterByName("show");
+
+              
+       if(link == "test"){
+        var A = getParameterByName("A")//ภาพ
+        var B = getParameterByName("B")//ชื่อเรื่อง
+        var C = getParameterByName("C")//ข้อความ
+        var D = getParameterByName("D")//ผู้แจ้ง
+        var E = getParameterByName("E")//วันเวลาแจ้ง
+        var Msg = [
+     
+          {
+  "type": "flex",
+  "altText": "Line Notify : Test Flex Message",
+  "contents":
+          
+           {
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "url": ""+A,
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "fit",
+    "action": {
+      "type": "uri",
+      "uri": "https://line.me/"
+    }
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "ทดสอบส่ง Flex Message",
+        "weight": "bold",
+        "size": "xl"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "lg",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "ชื่อเรื่อง",
+                "size": "md",
+                "flex": 2,
+                "weight": "bold"
+              },
+              {
+                "type": "text",
+                "text": ""+B,
+                "wrap": true,
+                "color": "#666666",
+                "size": "md",
+                "flex": 5
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "ข้อความ",
+                "size": "md",
+                "flex": 2,
+                "weight": "bold"
+              },
+              {
+                "type": "text",
+                "text": ""+C,
+                "wrap": true,
+                "color": "#666666",
+                "size": "md",
+                "flex": 5
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "ผู้แจ้ง",
+                "size": "md",
+                "flex": 2,
+                "weight": "bold"
+              },
+              {
+                "type": "text",
+                "text": ""+D,
+                "wrap": true,
+                "color": "#666666",
+                "size": "md",
+                "flex": 5
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "เวลา",
+                "weight": "bold",
+                "size": "md",
+                "flex": 2
+              },
+              {
+                "type": "text",
+                "text": ""+E,
+                "flex": 5,
+                "size": "md",
+                "color": "#666666",
+                "wrap": true
+              }
+            ]
+          }
+        ]
+      }
+    ],
+      "background": {
+      "type": "linearGradient",
+      "angle": "0deg",
+      "startColor": "#ffffff",
+      "endColor": "#ff8a80"
+    }
+  },             
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "button",
+        "style": "link",
+        "height": "sm",
+        "action": {
+          "type": "uri",
+          "label": "คลิกดูรายละเอียด",
+          "uri": "https://www.appsheet.com/start/54c66313-61ec-411d-860c-5fd65ec0207e"
+        }
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "margin": "sm"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "ทดลองส่ง Flex Message คลิกเลย!",
+          "uri": "https://lin.ee/w3IOJGh"
+        },
+        "height": "sm",
+        "style": "link"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": []
+      }
+    ],
+    "flex": 0
+  }
+}
+            
+         
+            
+          }
+       
+        ]
+        
+        ShareTargetPicker(Msg)
+        }
+
+       
+       
+       
+       
+       } else {
+        liff.login();
+      }
+
+  
+    })
+  });
+    
+    
+      function ShareTargetPicker(flex){
+ 
+   liff.shareTargetPicker(flex).then(function () {
+            liff.closeWindow();
+        });
+   
+
+      }
+    
+    function sendflex(flex){
+        
+    liff.sendMessages(flex).then(function() {
+            liff.closeWindow();
+          
+        });
+        
+      }
+    
+    
+    
+      function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+  }
+  
+
+    </script>
+    
+  </body>
+</html>
+
+
+
